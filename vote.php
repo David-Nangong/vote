@@ -8,6 +8,7 @@
 		require_once('fns.php');
 		$lastNUM = getlastNUM();	//取得前一天结束投票时的票数，用来计算几天的得票！
 		$tableName = gettableName();
+		$day = getDay();
 
 		$conn = new mysqli('localhost','root','1234','vote');
 		$file = fopen("log.txt", "a") or die("Unable to open file!");
@@ -69,8 +70,8 @@
 		 	$jinridepiao = $num[0][$key] - $lastNUM[$name];
 		 	echo $jinridepiao;
 		 	echo "<br>";
-		 	$sql = "insert into ".$tableName[$name]." (mingci,piaoshu,lingxianpiao,jinridepiao,time,day) values (".($key+1).",".$num[0][$key].",".$lingxianpiao.",".$jinridepiao.",'".$time."',16)";	//最后一个数字代表当天日期
-		 	//echo $sql;
+		 	$sql = "insert into ".$tableName[$name]." (mingci,piaoshu,lingxianpiao,jinridepiao,time,day) values (".($key+1).",".$num[0][$key].",".$lingxianpiao.",".$jinridepiao.",'".$time."',".$day.")";	//最后一个数字代表当天日期
+		 	// echo $sql;
 		 	$result = $conn->query($sql);
 		 	if(!$result) {
 		 		$log = "数据库写入失败！姓名：".$name."，时间：".$time."\r\n";

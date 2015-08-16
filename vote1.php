@@ -1,6 +1,6 @@
 <html>
 <head>
-	<meta http-equiv="refresh" content="60">
+	<!-- <meta http-equiv="refresh" content="60"> -->
 	<title>投票统计</title>
 </head>
 <body>
@@ -8,6 +8,7 @@
 		require_once('fns.php');
 		$lastNUM = getlastNUM();	//取得前一天结束投票时的票数，用来计算今天的得票！
 		
+
 		date_default_timezone_set("Asia/Shanghai");
 		echo "当前时间是 " . date("Y-m-d H:i:s") . "<br>";
 		$url = "http://www.jinta.ccoo.cn/tp/item_ph.asp?voteid=14476"; 

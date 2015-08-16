@@ -16,6 +16,7 @@
 		require_once('fns.php');
 		$name = getName();
 		$tableName = gettableName();
+		$day = getDay();
 
 		$con = new mysqli('localhost','root','1234','vote');
 		if (!$con) {
@@ -31,7 +32,7 @@
 		 * 4：今日得票数
 		 */
 		foreach ($name as $key => $value) {
-			$result = $con->query("select * from ".$tableName[$value]." where day=16");
+			$result = $con->query("select * from ".$tableName[$value]." where day=".$day);
 			$i = 0;
 			if($flag){	//第一次遍历的时候顺便取X轴的数据，存入$x中
 				while ($row = $result->fetch_row()) {
