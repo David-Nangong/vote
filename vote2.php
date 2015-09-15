@@ -11,13 +11,15 @@
 
 		date_default_timezone_set("Asia/Shanghai");
 		echo "当前时间是 " . date("Y-m-d H:i:s") . "<br>";
-		$url = "http://www.jinta.ccoo.cn/tp/item_ph.asp?voteid=14476"; 
+		$url = "http://hd.adccoo.cn/193/voteph-14476.html"; 
 		$contents = file_get_contents($url); 
+		echo $contents;
 		$getcontent = iconv("gb2312", "utf-8",$contents); 	//如果出现中文乱码使用该行代码 
 
-		// echo $getcontent;
-		if (preg_match_all('/―(.*)<\/a>/',$getcontent,$matches)){
-			//print_r($matches[1]);
+		echo $getcontent;
+		exit();
+		if (preg_match_all('/—(.{2,3})<\/div>/',$getcontent,$matches)){
+			print_r($matches[1]);
 		 }
 		 else {
 		    print "姓名分离失败！";

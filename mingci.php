@@ -1,16 +1,16 @@
 <html>
 <head>
-	<meta http-equiv="refresh" content="900">
+	<!-- <meta http-equiv="refresh" content="900"> -->
 	<script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
   	<script type="text/javascript" src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
   	<script type="text/javascript" src="http://cdn.hcharts.cn/highcharts/exporting.js"></script>
 	<title>图表汇总</title>
 </head>
 <body>
-	<div id="mingci" style="min-width:700px;height:750px"></div>
-	<div id="zongji" style="min-width:700px;height:750px"></div>
-	<div id="jinridepiao" style="min-width:700px;height:750px"></div>
-	<div id="toupiaozongshu" style="min-width:700px;height:750px"></div>
+	<div id="mingci" style="min-width:3000px;height:750px"></div>
+	<div id="zongji" style="min-width:3000px;height:750px"></div>
+	<div id="jinridepiao" style="min-width:3000px;height:750px"></div>
+	<div id="toupiaozongshu" style="min-width:3000px;height:750px"></div>
 
 	<?php
 		require_once('fns.php');
